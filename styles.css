@@ -1,0 +1,317 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "Silkscreen";
+    src: url(fonts/slkscr.ttf);
+  }
+
+@font-face {
+    font-family: "Silkscreen, bold";
+    src: url(fonts/slkscrb.ttf)
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 8px; /* Track border radius */
+    background-color: #e7e7e7; /* Track background color */
+    border: 1px solid #cacaca; /* Track border */
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3); /* Track inner shadow */
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px; /* Thumb border radius */
+    background-color: #363636; /* Thumb background color */
+}
+
+/* Top banner */
+  header {
+    position: relative; /* Ensure the header is positioned relative for absolute positioning of the overlay */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)), url('pokemon_emerald_sprite_banner.jpg') top center;
+    background-size: 35%; /* Adjust the percentage as needed to make the image larger */
+    height: 30%; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height:3px; /* Adjust the height of the white edge as needed */
+    background-color: white;
+}
+
+h1 {
+    color: #f8eaea;
+    font-family: "Silkscreen";
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 30px
+}
+
+.headerbox {
+    background-color: #00000085;
+    padding: 10px 50px;
+    border-radius: 10%;
+    opacity: 100%
+}
+
+.blackcircle {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 730px; /* Adjust the width and height as needed */
+    height: 730px;
+    border-radius: 50%; /* This creates a circular shape */
+    background-color: #222224; /* Adjust the background color as needed */
+}
+
+.whitecircle {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 590px; /* Adjust the width and height as needed */
+    height: 590px;
+    border-radius: 50%; /* This creates a circular shape */
+    background-color: white; /* Adjust the background color as needed */
+}
+
+/* Pokeball coloured background */
+.red {
+    position: relative;
+    height: 455px;
+    background-color: #f0442d;
+}
+
+.black {
+    position: relative; 
+    height: 15%; 
+    background-color: #222224;
+}
+
+.white {
+    bottom: 0;
+    height: 0;
+    background-color: white;
+}
+
+/* Dropdown search box */
+.search-container {
+    position: relative;
+    margin-top: 44%; 
+    margin-left: 105%;
+}
+
+.search-container input[type="text"] {
+    border: 2px solid transparent; 
+    box-shadow: 0 0 10px rgba(201, 221, 19, 0.5); 
+    transition: box-shadow 0.3s ease; 
+}
+
+.search-container input[type="text"]:focus {
+    outline: none; 
+    box-shadow: 0 0 20px rgba(201, 221, 19, 0.5); 
+}
+
+#searchInput {
+    font-family: "Silkscreen"
+}
+
+#searchInput:active {
+    background-color: #d6d6d6;
+}
+
+#searchDropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0 2px 4px #00000033;
+    z-index: 1;
+    font-family: "Silkscreen";
+    max-height: 310px; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+.dropdown-content img {
+    width: 70px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.dropdown-content {
+    color: black;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #d1d1d1;
+}
+
+.dropdown-item:active {
+    background-color: #b8b8b8;
+    position: relative;
+    top: 2px; /* Adjust the top and left values as needed */
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-left: 2px solid #888;
+    border-right: 2px solid #7e7e7e; 
+    border-top: 2px solid #888;
+    border-bottom: 2px solid #7e7e7e;
+    z-index: -1;
+}
+
+
+/* Pokemon center info */
+.pokemon-info-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Silkscreen";
+}
+
+.pokemon-info-container h2 {
+    font-family: "Silkscreen, bold";
+    position: absolute;
+    bottom: 160px;
+    text-align: center;
+    width: 300px;
+}
+
+.pokemon-info-container img {
+    position: absolute;
+    bottom: 20px;
+    right: 300px;
+} 
+
+/* Pokemon Typing */
+#typeContainer {
+    position: absolute;
+    bottom: 60px;
+    right: 190px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    height: 100px; 
+    overflow: hidden; 
+}
+
+#typeLabel {
+    margin-bottom: 10px; 
+}
+
+.pokemon-type {
+    display: inline-block;
+}
+
+/* Abilities */
+.abilityContainer {
+    position: absolute;
+    top: 0px;
+}
+.ability-popup {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 1;
+    font-family: "Silkscreen"
+}
+
+.ability:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Weakness */
+#weaknesses {
+    position: absolute;
+    top: 40px;
+    display: flex;
+    justify-content: center; 
+}
+
+#weaknessTypes span {
+    margin-left: 6px;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+}
+
+#weaknessTypes {
+    max-width: 400px;
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Resistance */
+#resistances {
+    position: absolute;
+    top: 110px;
+    display: flex;
+    justify-content: center;
+}
+
+#resistanceTypes span {
+    margin-left: 6px;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+}
+
+#resistanceTypes {
+    max-width: 400px;
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Immunities */
+#immunities {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#immunityTypes span {
+    margin-left: 6px;
+    padding: 5px;
+}
+
+
+
+
